@@ -1,4 +1,5 @@
 import React from 'react';
+import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
 import './Shop.css';
 
@@ -13,13 +14,18 @@ const Shop = () => {
             .catch(error => console.log(error));
     }, []);
 
-    console.log(products);
+    const handleClick = (id) => {
+        console.log("clicked on " + id);
+    }
+
+    // console.log(products);
 
     const allProducts = products.map(product => {
           return  (
               <Products
                     key={product.id}
                     {...product}
+                    handleClick={handleClick}
               ></Products>
           )
     });
@@ -33,7 +39,7 @@ const Shop = () => {
                 </div>
             </div>
             <div className="col-2 cart-container">
-                <h4>Cart</h4>
+                <Cart></Cart>
             </div>
         </div>
     );

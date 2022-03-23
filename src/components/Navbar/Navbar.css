@@ -1,3 +1,10 @@
+.nav-div{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
 .navbar-light .navbar-toggler-icon {
     background-image: url(https://freepikpsd.com/file/2019/10/toggle-menu-icon-png-8-Transparent-Images.png );
 }

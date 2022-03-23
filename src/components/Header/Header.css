@@ -2,4 +2,7 @@
 
 .header{
     font-family: 'Lato';
+    overflow: hidden;
+    z-index: 10;
+    top: 0px;
 }

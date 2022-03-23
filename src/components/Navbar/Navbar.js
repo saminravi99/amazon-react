@@ -4,7 +4,7 @@ import Logo from "../../images/Logo.svg"
 
 const Navbar = () => {
     return (
-        <div>
+        <div className="nav-div" >
                 <nav className="navbar navbar-expand-lg navbar-light bg-dark">
                     <div className="container">
                         <div className="navbar-brand" href="f">

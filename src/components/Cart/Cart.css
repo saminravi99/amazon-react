@@ -1,0 +1,26 @@
+
+
+.cart{
+    position: sticky;
+    top: 90px;
+}
+
+.clr-btn{
+    background-color: #FF3030;
+    font-family: 'Lato';
+    font-weight: 400;
+    border: none;
+    color: aliceblue;
+    border-radius: 5px;
+    font-size:17px;
+}
+
+.rvw-btn{
+    background-color: #FF9900;
+    font-family: 'Lato';
+    font-weight: 400;
+    border: none;
+    color: aliceblue;
+    border-radius: 5px;
+    font-size:17px;
+}
