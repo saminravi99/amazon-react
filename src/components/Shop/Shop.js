@@ -1,4 +1,5 @@
 import React from 'react';
+import { addToDb} from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
 import './Shop.css';
@@ -6,6 +7,8 @@ import './Shop.css';
 const Shop = () => {
 
     const [products, setProducts] = React.useState([]);
+
+    const [cart, setCart] = React.useState([]);
 
     React.useEffect(() => {
         fetch("products.json")
@@ -15,8 +18,23 @@ const Shop = () => {
     }, []);
 
     const handleClick = (id) => {
-        console.log("clicked on " + id);
+        const newCart = [...cart, products.find(product => product.id === id)];
+        setCart(newCart);
+        addToDb (id);
     }
+
+    const clearCart = (id) => {
+        setCart([]);
+        // removeFromDb(id.id);
+    }
+
+    const confirmOrder = () => {
+        alert("Thank you for your order!");
+        setCart([]);
+    }
+
+
+    // console.log(cart);
 
     // console.log(products);
 
@@ -33,13 +51,18 @@ const Shop = () => {
 
     return (
         <div className="mx-auto row shop">
-             <div className=" col-10 shop-container">
-                <div className="container mx-auto my-2 row row-cols-1 row-cols-md-3 g-5">
+             <div className=" col-9 shop-container">
+                <div className="container mx-auto my-4 row row-cols-1 row-cols-md-3 g-3">
                     {allProducts} 
                 </div>
             </div>
-            <div className="col-2 cart-container">
-                <Cart></Cart>
+            <div className="col-3 cart-container">
+                <Cart
+                {...products}
+                cart={cart}
+                clearCart={clearCart}
+                confirmOrder={confirmOrder}
+                ></Cart>
             </div>
         </div>
     );
