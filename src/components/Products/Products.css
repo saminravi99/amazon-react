@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.card{
+    height: 575px;
+    font-family: "Lato";
+}
+
+
+.add-to-cart{
+    background-color: #FFE0B3;
+    padding: 12px 100px;
+    font-family: 'Lato';
+    font-weight: 700;
+    border: none;
+}
+
+.add-to-cart:hover{
+    background-color: #e9af59;
+}
